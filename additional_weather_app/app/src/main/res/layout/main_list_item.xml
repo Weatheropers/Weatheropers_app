@@ -4,8 +4,8 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:gravity="center"
-    android:padding="24dp"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:padding="24dp">
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -17,19 +17,19 @@
             android:id="@+id/textView5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:text="80"
             android:textAlignment="center"
             android:textColor="#CCCCCC"
-            android:textSize="30sp"
-            android:text="80" />
+            android:textSize="30sp" />
 
         <TextView
             android:id="@+id/textView6"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:text="%"
             android:textAlignment="center"
             android:textColor="#CCCCCC"
-            android:textSize="18sp"
-            android:text="%" />
+            android:textSize="18sp" />
 
     </LinearLayout>
 
@@ -37,9 +37,9 @@
         android:id="@+id/textView7"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="강수확률"
         android:textAlignment="center"
         android:textColor="#CCCCCC"
-        android:textSize="24sp"
-        android:text="강수확률" />
+        android:textSize="24sp" />
 
 </LinearLayout>

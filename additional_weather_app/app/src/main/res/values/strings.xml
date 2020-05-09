@@ -1,6 +1,10 @@
 <resources>
     <string name="app_name">additional_weather_app</string>
-
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string-array name="province_array">
+        <item>유성구</item>
+        <item>서구</item>
+        <item>중구</item>
+        <item>대덕구</item>
+        <item>동구</item>
+    </string-array>
 </resources>

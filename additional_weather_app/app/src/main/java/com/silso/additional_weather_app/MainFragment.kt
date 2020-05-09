@@ -1,4 +1,4 @@
-package com.silso.additional_weather_app.ui
+package com.silso.additional_weather_app
 
 import android.os.Bundle
 import android.util.Log
