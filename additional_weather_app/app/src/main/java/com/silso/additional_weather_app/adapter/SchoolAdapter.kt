@@ -1,17 +1,12 @@
 package com.silso.additional_weather_app.adapter
 
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
-import androidx.recyclerview.widget.RecyclerView
 import com.silso.additional_weather_app.R
+import com.silso.additional_weather_app.data.SchoolData
+import com.silso.additional_weather_app.databinding.SchoolListItemBinding
 
-class SchoolAdapter: RecyclerView.Adapter<SchoolAdapter.ViewHolder>() {
-    inner class ViewHolder(view: View): RecyclerView.ViewHolder(view)
-
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        return ViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.school_list_item, parent, false))
+class SchoolAdapter(var SchoolList: List<SchoolData>) :
+    RecyclerViewBaseAdapter<SchoolData>(SchoolList, R.layout.school_list_item) {
+    override fun onBindViewHolder(holder: BaseViewHolder<*>, position: Int) {
+        (holder.binding as SchoolListItemBinding).schoolData = SchoolList[position]
     }
-    override fun getItemCount(): Int = 4
-    override fun onBindViewHolder(holder: ViewHolder, position: Int) {}
 }

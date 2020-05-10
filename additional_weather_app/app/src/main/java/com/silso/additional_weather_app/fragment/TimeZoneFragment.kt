@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.silso.additional_weather_app.R
 import com.silso.additional_weather_app.adapter.SchoolAdapter
 import com.silso.additional_weather_app.adapter.TimeZoneAdapter
+import com.silso.additional_weather_app.data.TimeData
 import kotlinx.android.synthetic.main.fragment_school.*
 import kotlinx.android.synthetic.main.fragment_time.*
 
@@ -28,6 +29,19 @@ class TimeZoneFragment : Fragment() {
         val lim = LinearLayoutManager(activity)
         lim.orientation = LinearLayoutManager.HORIZONTAL
         time_zone_fragment_recyclerView.layoutManager = lim
-        time_zone_fragment_recyclerView.adapter = TimeZoneAdapter()
+        time_zone_fragment_recyclerView.adapter = TimeZoneAdapter(
+            listOf(
+                TimeData("", 0, "", "", ""),
+                TimeData("", 0, "", "", ""),
+                TimeData("", 0, "", "", ""),
+                TimeData("", 0, "", "", ""),
+                TimeData("", 0, "", "", ""),
+                TimeData("", 0, "", "", ""),
+                TimeData("", 0, "", "", ""),
+                TimeData("", 0, "", "", ""),
+                TimeData("", 0, "", "", ""),
+                TimeData("", 0, "", "", "")
+            )
+        )
     }
 }

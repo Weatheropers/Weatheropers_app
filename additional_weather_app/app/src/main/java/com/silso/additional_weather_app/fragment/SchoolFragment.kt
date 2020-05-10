@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 
 import com.silso.additional_weather_app.R
 import com.silso.additional_weather_app.adapter.SchoolAdapter
+import com.silso.additional_weather_app.data.SchoolData
 import kotlinx.android.synthetic.main.fragment_school.*
 
 class SchoolFragment : Fragment() {
@@ -26,6 +27,11 @@ class SchoolFragment : Fragment() {
         val lim = LinearLayoutManager(activity)
         lim.orientation = LinearLayoutManager.VERTICAL
         school_fragment_recyclerView.layoutManager = lim
-        school_fragment_recyclerView.adapter = SchoolAdapter()
+        school_fragment_recyclerView.adapter = SchoolAdapter(listOf(
+            SchoolData("", 0, ""),
+            SchoolData("", 0, ""),
+            SchoolData("", 0, ""),
+            SchoolData("", 0, "")
+            ))
     }
 }

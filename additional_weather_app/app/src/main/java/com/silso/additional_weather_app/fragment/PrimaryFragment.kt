@@ -6,9 +6,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.silso.additional_weather_app.adapter.primaryAdapter
+import com.silso.additional_weather_app.adapter.PrimaryAdapter
 
 import com.silso.additional_weather_app.R
+import com.silso.additional_weather_app.data.SimpleData
 import kotlinx.android.synthetic.main.fragment_primary.*
 
 class PrimaryFragment : Fragment() {
@@ -26,6 +27,12 @@ class PrimaryFragment : Fragment() {
         val lim = LinearLayoutManager(activity)
         lim.orientation = LinearLayoutManager.HORIZONTAL
         primary_fragment_recyclerView.layoutManager = lim
-        primary_fragment_recyclerView.adapter = primaryAdapter()
+        primary_fragment_recyclerView.adapter = PrimaryAdapter(
+            listOf(
+                SimpleData("", "", ""),
+                SimpleData("", "", ""),
+                SimpleData("", "", "")
+            )
+        )
     }
 }

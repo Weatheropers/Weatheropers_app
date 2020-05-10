@@ -3,6 +3,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".fragment.SchoolFragment">
 
+    <data>
+        <variable
+            name="time_data"
+            type="com.silso.additional_weather_app.data.TimeData" />
+    </data>
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
