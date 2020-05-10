@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".fragment.DetailFragment">
+    tools:context=".fragment.SchoolFragment">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -13,7 +13,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
-            android:text="세부 날씨"
+            android:text="시간대 날씨"
             android:textAlignment="center"
             android:textColor="#CCCCCC"
             android:textSize="30sp"
@@ -28,14 +28,12 @@
             android:layout_alignEnd="@+id/tv_time_zone_title"
             android:src="@drawable/shape" />
 
-        <com.silso.additional_weather_app.CustomGridView
-            android:id="@+id/grid_detail_info"
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/time_zone_fragment_recyclerView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/image_time_zone_title_line"
-            android:layout_marginTop="0dp"
-            android:numColumns="3"
-            android:paddingBottom="64dp" />
-
+            android:layout_marginTop="12dp"
+            android:paddingBottom="32dp" />
     </RelativeLayout>
 </layout>

@@ -1,7 +1,6 @@
 package com.silso.additional_weather_app
 
 import android.os.Bundle
-import android.view.MotionEvent
 import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
@@ -9,8 +8,8 @@ import androidx.appcompat.app.AppCompatActivity
 import com.silso.additional_weather_app.fragment.DetailFragment
 import com.silso.additional_weather_app.fragment.PrimaryFragment
 import com.silso.additional_weather_app.fragment.SchoolFragment
+import com.silso.additional_weather_app.fragment.TimeZoneFragment
 import kotlinx.android.synthetic.main.activity_main.*
-import org.jetbrains.anko.sdk25.coroutines.onItemSelectedListener
 
 class MainActivity : AppCompatActivity() {
 
@@ -27,6 +26,7 @@ class MainActivity : AppCompatActivity() {
             replace(R.id.primary_fragment_container, PrimaryFragment())
             replace(R.id.school_fragment_container, SchoolFragment())
             replace(R.id.detail_fragment_container, DetailFragment())
+            replace(R.id.time_zone_fragment_container, TimeZoneFragment())
         }.commit()
     }
 
