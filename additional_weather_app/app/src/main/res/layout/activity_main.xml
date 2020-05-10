@@ -2,9 +2,10 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:background="@drawable/rain"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/rain"
+    android:overScrollMode="never"
     tools:context=".MainActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -29,7 +30,7 @@
             android:text="@string/default_province"
             android:textColor="#f5f5f5"
             android:textSize="30sp"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintBottom_toBottomOf="@+id/view_main_draw"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -39,14 +40,14 @@
             android:layout_height="wrap_content"
             android:layout_marginEnd="32dp"
             android:background="@drawable/spinner_background"
-            android:spinnerMode="dropdown"
+            android:spinnerMode="dialog"
             app:layout_constraintBottom_toBottomOf="@+id/view_main_draw"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <androidx.fragment.app.FragmentContainerView
             android:id="@+id/primary_fragment_container"
-            android:name="com.silso.additional_weather_app.fragment.MainFragment"
+            android:name="com.silso.additional_weather_app.fragment.PrimaryFragment"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             app:layout_constraintEnd_toEndOf="parent"
@@ -61,5 +62,14 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/primary_fragment_container" />
+
+        <androidx.fragment.app.FragmentContainerView
+            android:id="@+id/detail_fragment_container"
+            android:name="com.silso.additional_weather_app.fragment.DetailFragment"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/school_fragment_container" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

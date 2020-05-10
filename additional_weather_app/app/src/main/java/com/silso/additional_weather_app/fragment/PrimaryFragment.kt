@@ -11,7 +11,7 @@ import com.silso.additional_weather_app.adapter.primaryAdapter
 import com.silso.additional_weather_app.R
 import kotlinx.android.synthetic.main.fragment_primary.*
 
-class primaryFragment : Fragment() {
+class PrimaryFragment : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -26,7 +26,6 @@ class primaryFragment : Fragment() {
         val lim = LinearLayoutManager(activity)
         lim.orientation = LinearLayoutManager.HORIZONTAL
         primary_fragment_recyclerView.layoutManager = lim
-        primary_fragment_recyclerView.adapter =
-            primaryAdapter()
+        primary_fragment_recyclerView.adapter = primaryAdapter()
     }
 }
