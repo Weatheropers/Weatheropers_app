@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragment.SchoolFragment">
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:text="등하교 날씨"
+        android:textAlignment="center"
+        android:textColor="#CCCCCC"
+        android:textSize="30sp"
+        android:textStyle="bold" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView8"
+        android:layout_alignStart="@+id/textView8"
+        android:layout_alignEnd="@+id/textView8"
+        android:src="@drawable/shape" />
+
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/imageView"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="32dp"
+        android:gravity="center"
+        android:text="등하교시간"
+        android:textColor="#CCCCCC"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/imageView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/imageView"
+        android:layout_toStartOf="@+id/textView12"
+        android:layout_toEndOf="@+id/textView11"
+        android:gravity="center"
+        android:text="날씨"
+        android:textColor="#CCCCCC"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/textView12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/imageView"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="32dp"
+        android:gravity="center"
+        android:text="미세먼지"
+        android:textColor="#CCCCCC"
+        android:textSize="24sp" />
+
+    <View
+        android:id="@+id/divider2"
+        android:layout_width="match_parent"
+        android:layout_height="4dp"
+        android:layout_below="@+id/imageView3"
+        android:layout_alignStart="@+id/textView11"
+        android:layout_alignEnd="@+id/textView12"
+        android:background="#CCCCCC" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/school_fragment_recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/imageView3"
+        android:layout_marginTop="12dp" />
+</RelativeLayout>

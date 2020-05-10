@@ -5,6 +5,8 @@ import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import androidx.appcompat.app.AppCompatActivity
+import com.silso.additional_weather_app.fragment.MainFragment
+import com.silso.additional_weather_app.fragment.SchoolFragment
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -19,11 +21,20 @@ class MainActivity : AppCompatActivity() {
 
     fun setFragment() {
         supportFragmentManager
-            .beginTransaction()
-            .replace(R.id.main_fragment_container,
-                MainFragment()
-            )
-            .commit()
+            .beginTransaction().apply {
+                replace(R.id.main_fragment_container, MainFragment())
+                replace(R.id.school_fragment_container, SchoolFragment())
+            }.commit()
+
+//        supportFragmentManager
+//            .beginTransaction()
+//            .replace(R.id.main_fragment_container, MainFragment())
+//            .commit()
+//
+//        supportFragmentManager
+//            .beginTransaction()
+//            .replace(R.id.school_fragment_container, SchoolFragment())
+//            .commit()
     }
 
     fun setSpiner() {

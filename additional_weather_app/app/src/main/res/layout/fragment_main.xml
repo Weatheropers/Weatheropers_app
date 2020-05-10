@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".MainFragment">
+    tools:context=".fragment.MainFragment">
 
     <TextView
         android:id="@+id/textView"
@@ -69,9 +69,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingTop="32dp"
+        android:paddingBottom="44dp"
         android:text="비가 올 날씨네요 :D 실내운동 확정!"
         android:textAlignment="center"
         android:textColor="#CCCCCC"
         android:textSize="20sp" />
-
 </LinearLayout>
