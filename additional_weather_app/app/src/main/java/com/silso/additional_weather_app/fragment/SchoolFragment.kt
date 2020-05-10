@@ -6,7 +6,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.silso.additional_weather_app.adapter.MainViewAdapter
 
 import com.silso.additional_weather_app.R
 import com.silso.additional_weather_app.adapter.SchoolAdapter

@@ -12,7 +12,7 @@
         android:layout_height="wrap_content">
 
         <View
-            android:id="@+id/view"
+            android:id="@+id/view_main_draw"
             android:layout_width="0dp"
             android:layout_height="100dp"
             android:background="#0F0F0F"
@@ -22,36 +22,36 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/main_province_name_txt"
+            android:id="@+id/tv_main_province_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="32dp"
-            android:text="대전광역시 유성구"
+            android:text="@string/default_province"
             android:textColor="#f5f5f5"
             android:textSize="30sp"
-            app:layout_constraintBottom_toTopOf="@+id/main_fragment_container"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <Spinner
-            android:id="@+id/spinner"
+            android:id="@+id/spinnert_main_select_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="32dp"
             android:background="@drawable/spinner_background"
             android:spinnerMode="dropdown"
-            app:layout_constraintBottom_toBottomOf="@+id/view"
+            app:layout_constraintBottom_toBottomOf="@+id/view_main_draw"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <androidx.fragment.app.FragmentContainerView
-            android:id="@+id/main_fragment_container"
+            android:id="@+id/primary_fragment_container"
             android:name="com.silso.additional_weather_app.fragment.MainFragment"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/view" />
+            app:layout_constraintTop_toBottomOf="@+id/view_main_draw" />
 
         <androidx.fragment.app.FragmentContainerView
             android:id="@+id/school_fragment_container"
@@ -60,6 +60,6 @@
             android:layout_height="wrap_content"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/main_fragment_container" />
+            app:layout_constraintTop_toBottomOf="@+id/primary_fragment_container" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

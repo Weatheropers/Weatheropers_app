@@ -5,7 +5,7 @@ import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import androidx.appcompat.app.AppCompatActivity
-import com.silso.additional_weather_app.fragment.MainFragment
+import com.silso.additional_weather_app.fragment.primaryFragment
 import com.silso.additional_weather_app.fragment.SchoolFragment
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -22,35 +22,25 @@ class MainActivity : AppCompatActivity() {
     fun setFragment() {
         supportFragmentManager
             .beginTransaction().apply {
-                replace(R.id.main_fragment_container, MainFragment())
+                replace(R.id.primary_fragment_container, primaryFragment())
                 replace(R.id.school_fragment_container, SchoolFragment())
             }.commit()
-
-//        supportFragmentManager
-//            .beginTransaction()
-//            .replace(R.id.main_fragment_container, MainFragment())
-//            .commit()
-//
-//        supportFragmentManager
-//            .beginTransaction()
-//            .replace(R.id.school_fragment_container, SchoolFragment())
-//            .commit()
     }
 
     fun setSpiner() {
         val spinnerAdapter =
             ArrayAdapter.createFromResource(this, R.array.province_array, R.layout.row_spinner)
         spinnerAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-        spinner.adapter = spinnerAdapter
-        spinner.prompt = "(구 선택)"
-        spinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+        spinnert_main_select_name.adapter = spinnerAdapter
+        spinnert_main_select_name.prompt = "(구 선택)"
+        spinnert_main_select_name.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(
                 parent: AdapterView<*>,
                 view: View,
                 position: Int,
                 id: Long
             ) {
-                main_province_name_txt.text = when (position) {
+                tv_main_province_name.text = when (position) {
                     0 -> "대전광역시 유성구"
                     1 -> "대전광역시 서구"
                     2 -> "대전광역시 중구"
