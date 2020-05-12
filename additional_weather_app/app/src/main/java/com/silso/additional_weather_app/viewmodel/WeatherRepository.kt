@@ -18,7 +18,7 @@ class WeatherRepository : KoinComponent {
     private var primeData: Single<List<WeatherData>>? = null
     var schoolLiveData = MutableLiveData<List<SchoolData>>()
     var detailLiveData = MutableLiveData<List<SimpleData>>()
-    var primaryLiveData = MutableLiveData<List<SimpleData>>()
+    var primaryLiveData = MutableLiveData<List<PrimaryData>>()
     var timezoneLiveData = MutableLiveData<List<TimeData>>()
 
     private val observer = object : Observer<List<WeatherData>> {
@@ -58,9 +58,33 @@ class WeatherRepository : KoinComponent {
 
     fun getPrimaryData() {
         primaryLiveData.value = listOf(
-            SimpleData("강수확률", "%", data[0].rain_persent.toString()),
-            SimpleData("아침운동", "%", data[0].rain_persent.toString()),
-            SimpleData("미세먼지", "단계", data[0].fine_dust)
+            PrimaryData(
+                "강수확률",
+                "%",
+                data[0].rain_persent.toString(),
+                data[0].weather_kor,
+                data[0].temp.toString(),
+                "${data[0].day_high_temp}º / ${data[0].day_low_temp}º",
+                ""
+            ),
+            PrimaryData(
+                "아침운동",
+                "%",
+                data[0].rain_persent.toString(),
+                data[0].weather_kor,
+                data[0].temp.toString(),
+                "${data[0].day_high_temp}º / ${data[0].day_low_temp}º",
+                ""
+            ),
+            PrimaryData(
+                "미세먼지",
+                "단계",
+                data[0].fine_dust,
+                data[0].weather_kor,
+                data[0].temp.toString(),
+                "${data[0].day_high_temp}º / ${data[0].day_low_temp}º",
+                ""
+            )
         )
     }
 
@@ -80,11 +104,11 @@ class WeatherRepository : KoinComponent {
         for (i in data) {
             list.add(
                 TimeData(
-                    i.hour.toString(),
+                    i.hour.toString() + "시",
                     ImageEnum.convertImage(i.sky_state),
-                    i.temp.toString(),
-                    i.rain_persent.toString(),
-                    i.humi.toString()
+                    i.temp.toString() + "°C",
+                    i.rain_persent.toString() + "%",
+                    i.humi.toString() + "%"
                 )
             )
         }
