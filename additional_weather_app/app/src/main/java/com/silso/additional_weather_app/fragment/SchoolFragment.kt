@@ -27,11 +27,13 @@ class SchoolFragment : Fragment() {
         val lim = LinearLayoutManager(activity)
         lim.orientation = LinearLayoutManager.VERTICAL
         school_fragment_recyclerView.layoutManager = lim
-        school_fragment_recyclerView.adapter = SchoolAdapter(listOf(
-            SchoolData("", 0, ""),
-            SchoolData("", 0, ""),
-            SchoolData("", 0, ""),
-            SchoolData("", 0, "")
-            ))
+        school_fragment_recyclerView.adapter = SchoolAdapter(
+            listOf(
+                SchoolData("", 0, ""),
+                SchoolData("", 0, ""),
+                SchoolData("", 0, ""),
+                SchoolData("", 0, "")
+            )
+        )
     }
 }

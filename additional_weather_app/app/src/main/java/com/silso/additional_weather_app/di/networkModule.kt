@@ -1,11 +1,10 @@
 package com.silso.additional_weather_app.di
 
-import com.silso.additional_weather_app.BuildConfig
 import com.silso.additional_weather_app.data.WeatherData
 import okhttp3.OkHttpClient
-import org.koin.core.context.KoinContextHandler.get
 import org.koin.dsl.module
 import retrofit2.Retrofit
+import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.GET
 import retrofit2.http.Path
@@ -22,6 +21,7 @@ fun provideRetrofit(okHttpClient: OkHttpClient): Retrofit {
         .client(okHttpClient)
         .baseUrl("http://weatherapi.pythonanywhere.com/")
         .addConverterFactory(GsonConverterFactory.create())
+        .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
         .build()
 }
 
@@ -33,6 +33,6 @@ fun provideForecastApi(retrofit: Retrofit): WeatherApi = retrofit.create(Weather
 
 interface WeatherApi {
     @GET("gu/{id}")
-    fun getWeatherInfo(@Path("id") id: String): Single<WeatherData>
+    fun getWeatherInfo(@Path("id") id: String): Single<List<WeatherData>>
 }
 

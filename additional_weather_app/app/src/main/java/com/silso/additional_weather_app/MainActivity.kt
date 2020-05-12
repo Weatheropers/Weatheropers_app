@@ -10,8 +10,10 @@ import com.silso.additional_weather_app.fragment.PrimaryFragment
 import com.silso.additional_weather_app.fragment.SchoolFragment
 import com.silso.additional_weather_app.fragment.TimeZoneFragment
 import kotlinx.android.synthetic.main.activity_main.*
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class MainActivity : AppCompatActivity() {
+    val viewModel: MainViewModel by viewModel()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
