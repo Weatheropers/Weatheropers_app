@@ -1,7 +1,6 @@
 package com.silso.additional_weather_app.viewmodel
 
 import android.util.Log
-import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.silso.additional_weather_app.data.*
 import com.silso.additional_weather_app.di.WeatherApi
@@ -49,10 +48,10 @@ class WeatherRepository : KoinComponent {
 
     fun getSchoolData() {
         schoolLiveData.value = listOf(
-            SchoolData("이번등교", ImageEnum.convertImage(data[1].sky_state), data[1].fine_dust),
-            SchoolData("이번하교", ImageEnum.convertImage(data[4].sky_state), data[4].fine_dust),
-            SchoolData("다음등교", ImageEnum.convertImage(data[9].sky_state), data[9].fine_dust),
-            SchoolData("다음하교", ImageEnum.convertImage(data[12].sky_state), data[12].fine_dust)
+            SchoolData("이번등교", UtillObject.convertImage(data[1].sky_state), data[1].fine_dust),
+            SchoolData("이번하교", UtillObject.convertImage(data[4].sky_state), data[4].fine_dust),
+            SchoolData("다음등교", UtillObject.convertImage(data[9].sky_state), data[9].fine_dust),
+            SchoolData("다음하교", UtillObject.convertImage(data[12].sky_state), data[12].fine_dust)
         )
     }
 
@@ -65,16 +64,16 @@ class WeatherRepository : KoinComponent {
                 data[0].weather_kor,
                 data[0].temp.toString(),
                 "${data[0].day_high_temp}º / ${data[0].day_low_temp}º",
-                ""
+                UtillObject.getPhrase(data[0].weather_state)
             ),
             PrimaryData(
-                "아침운동",
-                "%",
-                data[0].rain_persent.toString(),
+                "풍향",
+                "",
+                data[0].wind_text,
                 data[0].weather_kor,
                 data[0].temp.toString(),
                 "${data[0].day_high_temp}º / ${data[0].day_low_temp}º",
-                ""
+                UtillObject.getPhrase(data[0].weather_state)
             ),
             PrimaryData(
                 "미세먼지",
@@ -83,7 +82,7 @@ class WeatherRepository : KoinComponent {
                 data[0].weather_kor,
                 data[0].temp.toString(),
                 "${data[0].day_high_temp}º / ${data[0].day_low_temp}º",
-                ""
+                UtillObject.getPhrase(data[0].weather_state)
             )
         )
     }
@@ -105,7 +104,7 @@ class WeatherRepository : KoinComponent {
             list.add(
                 TimeData(
                     i.hour.toString() + "시",
-                    ImageEnum.convertImage(i.sky_state),
+                    UtillObject.convertImage(i.sky_state),
                     i.temp.toString() + "°C",
                     i.rain_persent.toString() + "%",
                     i.humi.toString() + "%"

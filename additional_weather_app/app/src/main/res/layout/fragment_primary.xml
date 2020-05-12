@@ -69,17 +69,18 @@
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/primary_fragment_recyclerView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center"/>
 
         <TextView
             android:id="@+id/tv_primary_phrase"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingTop="48dp"
-            android:paddingBottom="64dp"
             android:text="@{primary_main_data.phrase}"
             android:textAlignment="center"
+            android:paddingBottom="64dp"
             android:textColor="#CCCCCC"
             android:textSize="20sp" />
     </LinearLayout>

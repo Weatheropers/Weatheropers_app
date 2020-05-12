@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android">
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android">
 
     <data>
         <variable
@@ -27,7 +28,8 @@
                 android:text="@{primary_data.value}"
                 android:textAlignment="center"
                 android:textColor="#CCCCCC"
-                android:textSize="30sp" />
+                android:textSize="30sp"
+                tools:text="dfdf" />
 
             <TextView
                 android:id="@+id/tv_detail_item_symbol"
@@ -36,7 +38,8 @@
                 android:text="@{primary_data.symbol}"
                 android:textAlignment="center"
                 android:textColor="#CCCCCC"
-                android:textSize="18sp" />
+                android:textSize="18sp"
+                tools:text="df" />
 
         </LinearLayout>
 
@@ -47,7 +50,8 @@
             android:text="@{primary_data.title}"
             android:textAlignment="center"
             android:textColor="#CCCCCC"
-            android:textSize="24sp" />
+            android:textSize="24sp"
+            tools:text="dfdfdfdf" />
 
     </LinearLayout>
 </layout>
