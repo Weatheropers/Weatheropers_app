@@ -20,7 +20,7 @@
             android:textStyle="bold" />
 
         <ImageView
-            android:id="@+id/image_time_zone_title_line"
+            android:id="@+id/image_school_title_line"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/tv_time_zone_title"
@@ -32,7 +32,7 @@
             android:id="@+id/tv_school_time_subtitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/image_time_zone_title_line"
+            android:layout_below="@+id/image_school_title_line"
             android:layout_alignParentStart="true"
             android:layout_marginStart="32dp"
             android:gravity="center"
@@ -44,7 +44,7 @@
             android:id="@+id/tv_school_weather_subtitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/image_time_zone_title_line"
+            android:layout_below="@+id/image_school_title_line"
             android:layout_toStartOf="@+id/tv_school_fine_dust_subtitle"
             android:layout_toEndOf="@+id/tv_school_time_subtitle"
             android:gravity="center"
@@ -56,7 +56,7 @@
             android:id="@+id/tv_school_fine_dust_subtitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/image_time_zone_title_line"
+            android:layout_below="@+id/image_school_title_line"
             android:layout_alignParentEnd="true"
             android:layout_marginEnd="32dp"
             android:gravity="center"

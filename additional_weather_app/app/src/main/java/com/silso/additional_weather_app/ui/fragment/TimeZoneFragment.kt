@@ -5,12 +5,14 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 
 import com.silso.additional_weather_app.R
 import com.silso.additional_weather_app.ui.adapter.TimeZoneAdapter
-import com.silso.additional_weather_app.data.TimeData
+import com.silso.additional_weather_app.viewmodel.MainViewModel
 import kotlinx.android.synthetic.main.fragment_time.*
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class TimeZoneFragment : Fragment() {
 
@@ -24,22 +26,12 @@ class TimeZoneFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val lim = LinearLayoutManager(activity)
-        lim.orientation = LinearLayoutManager.HORIZONTAL
-        time_zone_fragment_recyclerView.layoutManager = lim
-        time_zone_fragment_recyclerView.adapter = TimeZoneAdapter(
-            listOf(
-                TimeData("", 0, "", "", ""),
-                TimeData("", 0, "", "", ""),
-                TimeData("", 0, "", "", ""),
-                TimeData("", 0, "", "", ""),
-                TimeData("", 0, "", "", ""),
-                TimeData("", 0, "", "", ""),
-                TimeData("", 0, "", "", ""),
-                TimeData("", 0, "", "", ""),
-                TimeData("", 0, "", "", ""),
-                TimeData("", 0, "", "", "")
-            )
-        )
+        val viewModel: MainViewModel by viewModel()
+        viewModel.timezoneLiveData.observe(viewLifecycleOwner, Observer {
+            val lim = LinearLayoutManager(activity)
+            lim.orientation = LinearLayoutManager.HORIZONTAL
+            time_zone_fragment_recyclerView.layoutManager = lim
+            time_zone_fragment_recyclerView.adapter = TimeZoneAdapter(it)
+        })
     }
 }

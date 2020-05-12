@@ -14,32 +14,33 @@
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/textView"
+            android:id="@+id/tv_time_zone_item_hour"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="6시"
+            android:text="@{time_data.hour}"
             android:textAlignment="center"
             android:textColor="#CCCCCC"
             android:textSize="24sp" />
 
         <ImageView
-            android:id="@+id/imageView"
+            android:id="@+id/image_time_zone_item_weather"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="12dp"
             app:srcCompat="@drawable/sunny" />
 
         <TextView
-            android:id="@+id/textView2"
+            android:id="@+id/tv_time_zone_item_temp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="14°C"
+            android:text="@{time_data.temp}"
             android:textAlignment="center"
             android:textColor="#CCCCCC"
             android:textSize="28sp" />
 
+<!--°C, %, %-->
         <TextView
-            android:id="@+id/textView3"
+            android:id="@+id/tv_time_zone_item_rain_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingTop="12dp"
@@ -48,15 +49,15 @@
             android:textColor="#CCCCCC" />
 
         <TextView
-            android:id="@+id/textView5"
+            android:id="@+id/tv_time_zone_item_rain"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="70%"
+            android:text="@{time_data.rain}"
             android:textAlignment="center"
             android:textColor="#CCCCCC" />
 
         <TextView
-            android:id="@+id/textView4"
+            android:id="@+id/tv_time_zone_item_humi_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingTop="12dp"
@@ -65,10 +66,10 @@
             android:textColor="#CCCCCC" />
 
         <TextView
-            android:id="@+id/textView6"
+            android:id="@+id/tv_time_zone_item_humi"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="90%"
+            android:text="@{time_data.humidity}"
             android:textAlignment="center"
             android:textColor="#CCCCCC" />
     </LinearLayout>

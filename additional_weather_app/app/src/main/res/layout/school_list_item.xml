@@ -14,47 +14,47 @@
         android:layout_margin="12dp">
 
         <TextView
-            android:id="@+id/textView9"
+            android:id="@+id/tv_school_item_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_above="@+id/divider"
+            android:layout_above="@+id/divider_school_item"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
             android:layout_marginStart="32dp"
             android:gravity="center"
-            android:text="이번등교"
+            android:text="@{school_data.title}"
             android:textColor="#CCCCCC"
             android:textSize="30sp" />
 
         <ImageView
-            android:id="@+id/imageView2"
+            android:id="@+id/image_school_item_weather"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_toStartOf="@+id/textView10"
-            android:layout_toEndOf="@+id/textView9"
+            android:layout_toStartOf="@+id/tv_school_item_state"
+            android:layout_toEndOf="@+id/tv_school_item_title"
             app:srcCompat="@drawable/sunny" />
 
         <TextView
-            android:id="@+id/textView10"
+            android:id="@+id/tv_school_item_state"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_above="@+id/divider"
+            android:layout_above="@+id/divider_school_item"
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
             android:layout_marginTop="0dp"
             android:layout_marginEnd="32dp"
             android:gravity="center"
-            android:text="보통"
+            android:text="@{school_data.state}"
             android:textColor="#CCCCCC"
             android:textSize="30sp" />
 
         <View
-            android:id="@+id/divider"
+            android:id="@+id/divider_school_item"
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:layout_below="@+id/imageView2"
-            android:layout_alignStart="@+id/textView9"
-            android:layout_alignEnd="@+id/textView10"
+            android:layout_below="@+id/image_school_item_weather"
+            android:layout_alignStart="@+id/tv_school_item_title"
+            android:layout_alignEnd="@+id/tv_school_item_state"
             android:layout_marginTop="12dp"
             android:background="#CCCCCC" />
     </RelativeLayout>

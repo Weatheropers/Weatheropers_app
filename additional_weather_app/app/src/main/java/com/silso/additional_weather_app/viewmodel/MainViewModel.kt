@@ -10,7 +10,7 @@ class MainViewModel(private var repository: WeatherRepository) : ViewModel() {
     val primaryLiveData: LiveData<List<SimpleData>> = repository.primaryLiveData
     val schoolLiveData: LiveData<List<SchoolData>> = repository.schoolLiveData
     val detailLiveData: LiveData<List<SimpleData>> = repository.detailLiveData
-    val timezonLiveData: LiveData<List<TimeData>> = repository.timezoneLiveData
+    val timezoneLiveData: LiveData<List<TimeData>> = repository.timezoneLiveData
 
     fun getData(str: String) {
         repository.getWeatherData(str)
