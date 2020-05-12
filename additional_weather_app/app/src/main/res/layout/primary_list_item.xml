@@ -24,7 +24,7 @@
                 android:id="@+id/tv_detail_item_number"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="80"
+                android:text="@{primary_data.value}"
                 android:textAlignment="center"
                 android:textColor="#CCCCCC"
                 android:textSize="30sp" />
@@ -33,7 +33,7 @@
                 android:id="@+id/tv_detail_item_symbol"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="%"
+                android:text="@{primary_data.symbol}"
                 android:textAlignment="center"
                 android:textColor="#CCCCCC"
                 android:textSize="18sp" />
@@ -44,7 +44,7 @@
             android:id="@+id/tv_primary_item_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="강수확률"
+            android:text="@{primary_data.title}"
             android:textAlignment="center"
             android:textColor="#CCCCCC"
             android:textSize="24sp" />

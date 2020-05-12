@@ -1,4 +1,4 @@
-package com.silso.additional_weather_app.adapter
+package com.silso.additional_weather_app.ui.adapter
 
 import com.silso.additional_weather_app.R
 import com.silso.additional_weather_app.data.SimpleData

@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/rain"
     android:overScrollMode="never"
-    tools:context=".MainActivity">
+    tools:context=".ui.activity.MainActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -47,7 +47,7 @@
 
         <androidx.fragment.app.FragmentContainerView
             android:id="@+id/primary_fragment_container"
-            android:name="com.silso.additional_weather_app.fragment.PrimaryFragment"
+            android:name="com.silso.additional_weather_app.ui.fragment.PrimaryFragment"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             app:layout_constraintEnd_toEndOf="parent"
@@ -56,7 +56,7 @@
 
         <androidx.fragment.app.FragmentContainerView
             android:id="@+id/school_fragment_container"
-            android:name="com.silso.additional_weather_app.fragment.SchoolFragment"
+            android:name="com.silso.additional_weather_app.ui.fragment.SchoolFragment"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             app:layout_constraintEnd_toEndOf="parent"
@@ -65,7 +65,7 @@
 
         <androidx.fragment.app.FragmentContainerView
             android:id="@+id/detail_fragment_container"
-            android:name="com.silso.additional_weather_app.fragment.DetailFragment"
+            android:name="com.silso.additional_weather_app.ui.fragment.DetailFragment"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             app:layout_constraintEnd_toEndOf="parent"
@@ -74,7 +74,7 @@
 
         <androidx.fragment.app.FragmentContainerView
             android:id="@+id/time_zone_fragment_container"
-            android:name="com.silso.additional_weather_app.fragment.TimeZoneFragment"
+            android:name="com.silso.additional_weather_app.ui.fragment.TimeZoneFragment"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             app:layout_constraintEnd_toEndOf="parent"

@@ -1,4 +1,4 @@
-package com.silso.additional_weather_app.adapter
+package com.silso.additional_weather_app.ui.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

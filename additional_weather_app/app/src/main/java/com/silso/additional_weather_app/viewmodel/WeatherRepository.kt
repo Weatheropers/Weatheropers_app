@@ -1,4 +1,4 @@
-package com.silso.additional_weather_app
+package com.silso.additional_weather_app.viewmodel
 
 import android.util.Log
 import androidx.lifecycle.LiveData
@@ -16,6 +16,10 @@ class WeatherRepository : KoinComponent {
     var data = listOf<WeatherData>()
     private val retrofit: WeatherApi by inject()
     private var primeData: Single<List<WeatherData>>? = null
+    var schoolLiveData = MutableLiveData<List<SchoolData>>()
+    var detailLiveData = MutableLiveData<List<SimpleData>>()
+    var primaryLiveData = MutableLiveData<List<SimpleData>>()
+    var timezoneLiveData = MutableLiveData<List<TimeData>>()
 
     private val observer = object : Observer<List<WeatherData>> {
         override fun onError(e: Throwable?) {
@@ -29,6 +33,10 @@ class WeatherRepository : KoinComponent {
 
         override fun onCompleted() {
             Log.i("success", "success")
+            getDetailData()
+            getPrimaryData()
+            getSchoolData()
+            getTimeData()
         }
     }
 
@@ -39,40 +47,35 @@ class WeatherRepository : KoinComponent {
             ?.subscribe(observer)
     }
 
-    fun getSchoolData(): LiveData<List<SchoolData>> {
-        val list: List<SchoolData> = listOf(
+    fun getSchoolData() {
+        schoolLiveData.value = listOf(
             SchoolData("이번등교", ImageEnum.convertImage(data[1].sky_state), data[1].fine_dust),
             SchoolData("이번하교", ImageEnum.convertImage(data[4].sky_state), data[4].fine_dust),
             SchoolData("다음등교", ImageEnum.convertImage(data[9].sky_state), data[9].fine_dust),
             SchoolData("다음하교", ImageEnum.convertImage(data[12].sky_state), data[12].fine_dust)
         )
-        return MutableLiveData(list)
     }
 
-    fun getPrimaryData(): LiveData<List<SimpleData>> {
-        return MutableLiveData(
-            listOf(
-                SimpleData("강수확률", "%", data[0].rain_persent.toString()),
-                SimpleData("아침운동", "%", data[0].rain_persent.toString()),
-                SimpleData("미세먼지", "단계", data[0].fine_dust)
-            )
+    fun getPrimaryData() {
+        primaryLiveData.value = listOf(
+            SimpleData("강수확률", "%", data[0].rain_persent.toString()),
+            SimpleData("아침운동", "%", data[0].rain_persent.toString()),
+            SimpleData("미세먼지", "단계", data[0].fine_dust)
         )
     }
 
-    fun getDetailData(): LiveData<List<SimpleData>> {
-        return MutableLiveData(
-            listOf(
-                SimpleData("예측시간", "시", data[0].hour.toString()),
-                SimpleData("습도", "%", data[0].humi.toString()),
-                SimpleData("예상 강수량", "mm", data[0].expect_rain_6h.toString()),
-                SimpleData("풍속", "m/s", data[0].wind_speed.toString()),
-                SimpleData("미세먼지", "단계", data[0].fine_dust),
-                SimpleData("초미세먼지", "단계", data[0].fine_dust)
-            )
+    fun getDetailData() {
+        detailLiveData.value = listOf(
+            SimpleData("예측시간", "시", data[0].hour.toString()),
+            SimpleData("습도", "%", data[0].humi.toString()),
+            SimpleData("예상 강수량", "mm", data[0].expect_rain_6h.toString()),
+            SimpleData("풍속", "m/s", data[0].wind_speed.toString()),
+            SimpleData("미세먼지", "단계", data[0].fine_dust),
+            SimpleData("초미세먼지", "단계", data[0].fine_dust)
         )
     }
 
-    fun getTimeData(): LiveData<List<TimeData>> {
+    fun getTimeData() {
         val list: MutableList<TimeData> = mutableListOf()
         for (i in data) {
             list.add(
@@ -85,6 +88,6 @@ class WeatherRepository : KoinComponent {
                 )
             )
         }
-        return MutableLiveData(list)
+        timezoneLiveData.value = list
     }
 }

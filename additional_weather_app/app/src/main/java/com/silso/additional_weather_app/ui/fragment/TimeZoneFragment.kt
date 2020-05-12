@@ -1,4 +1,4 @@
-package com.silso.additional_weather_app.fragment
+package com.silso.additional_weather_app.ui.fragment
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -8,10 +8,8 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 
 import com.silso.additional_weather_app.R
-import com.silso.additional_weather_app.adapter.SchoolAdapter
-import com.silso.additional_weather_app.adapter.TimeZoneAdapter
+import com.silso.additional_weather_app.ui.adapter.TimeZoneAdapter
 import com.silso.additional_weather_app.data.TimeData
-import kotlinx.android.synthetic.main.fragment_school.*
 import kotlinx.android.synthetic.main.fragment_time.*
 
 class TimeZoneFragment : Fragment() {

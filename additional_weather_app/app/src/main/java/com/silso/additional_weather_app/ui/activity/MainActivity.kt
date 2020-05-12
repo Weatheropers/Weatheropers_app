@@ -1,14 +1,16 @@
-package com.silso.additional_weather_app
+package com.silso.additional_weather_app.ui.activity
 
 import android.os.Bundle
 import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import androidx.appcompat.app.AppCompatActivity
-import com.silso.additional_weather_app.fragment.DetailFragment
-import com.silso.additional_weather_app.fragment.PrimaryFragment
-import com.silso.additional_weather_app.fragment.SchoolFragment
-import com.silso.additional_weather_app.fragment.TimeZoneFragment
+import com.silso.additional_weather_app.R
+import com.silso.additional_weather_app.ui.fragment.DetailFragment
+import com.silso.additional_weather_app.ui.fragment.PrimaryFragment
+import com.silso.additional_weather_app.ui.fragment.SchoolFragment
+import com.silso.additional_weather_app.ui.fragment.TimeZoneFragment
+import com.silso.additional_weather_app.viewmodel.MainViewModel
 import kotlinx.android.synthetic.main.activity_main.*
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
@@ -19,6 +21,11 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        initialization()
+    }
+
+    fun initialization() {
+        viewModel.getData("0")
         setFragment()
         setSpiner()
     }
@@ -33,14 +40,24 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun setSpiner() {
-        val spinnerAdapter = ArrayAdapter.createFromResource(this, R.array.province_array, R.layout.row_spinner)
+        val spinnerAdapter = ArrayAdapter.createFromResource(
+            this,
+            R.array.province_array,
+            R.layout.row_spinner
+        )
         spinnerAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         spinnert_main_select_name.apply {
             adapter = spinnerAdapter
             prompt = "(구 선택)"
             onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
                 override fun onNothingSelected(parent: AdapterView<*>) {}
-                override fun onItemSelected(parent: AdapterView<*>, view: View, position: Int, id: Long) {
+                override fun onItemSelected(
+                    parent: AdapterView<*>,
+                    view: View,
+                    position: Int,
+                    id: Long
+                ) {
+                    viewModel.getData(position.toString())
                     tv_main_province_name.text = when (position) {
                         0 -> "대전광역시 유성구"
                         1 -> "대전광역시 서구"

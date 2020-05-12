@@ -1,18 +1,14 @@
-package com.silso.additional_weather_app.fragment
+package com.silso.additional_weather_app.ui.fragment
 
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.AdapterView
-import android.widget.TextView
-import com.silso.additional_weather_app.CustomGridView
+import com.silso.additional_weather_app.ui.CustomGridView
 
 import com.silso.additional_weather_app.R
-import com.silso.additional_weather_app.adapter.DetailAdapter
-import kotlinx.android.synthetic.main.fragment_detail.*
+import com.silso.additional_weather_app.ui.adapter.DetailAdapter
 
 class DetailFragment : Fragment() {
     override fun onCreateView(
