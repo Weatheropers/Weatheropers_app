@@ -1,45 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".ui.fragment.SchoolFragment">
 
-    <data>
-        <variable
-            name="time_data"
-            type="com.silso.additional_weather_app.data.TimeData" />
-    </data>
+    <TextView
+        android:id="@+id/tv_time_zone_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:text="시간대 날씨"
+        android:textAlignment="center"
+        android:textColor="#CCCCCC"
+        android:textSize="30sp"
+        android:textStyle="bold" />
 
-    <RelativeLayout
+    <ImageView
+        android:id="@+id/image_time_zone_title_line"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_time_zone_title"
+        android:layout_alignStart="@+id/tv_time_zone_title"
+        android:layout_alignEnd="@+id/tv_time_zone_title"
+        android:src="@drawable/shape" />
 
-        <TextView
-            android:id="@+id/tv_time_zone_title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"
-            android:text="시간대 날씨"
-            android:textAlignment="center"
-            android:textColor="#CCCCCC"
-            android:textSize="30sp"
-            android:textStyle="bold" />
-
-        <ImageView
-            android:id="@+id/image_time_zone_title_line"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/tv_time_zone_title"
-            android:layout_alignStart="@+id/tv_time_zone_title"
-            android:layout_alignEnd="@+id/tv_time_zone_title"
-            android:src="@drawable/shape" />
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/time_zone_fragment_recyclerView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/image_time_zone_title_line"
-            android:layout_marginTop="12dp"
-            android:paddingBottom="32dp" />
-    </RelativeLayout>
-</layout>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/time_zone_fragment_recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/image_time_zone_title_line"
+        android:layout_marginTop="12dp"
+        android:paddingBottom="32dp" />
+</RelativeLayout>
