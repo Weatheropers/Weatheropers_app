@@ -32,6 +32,7 @@
             android:id="@+id/grid_detail_info"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:gravity="center"
             android:layout_below="@+id/image_time_zone_title_line"
             android:layout_marginTop="0dp"
             android:numColumns="3"

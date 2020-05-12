@@ -17,7 +17,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="예측시간"
+            android:text="@{detail_data.title}"
             android:textAlignment="center"
             android:textColor="#CCCCCC"
             android:textSize="18sp" />
@@ -32,7 +32,7 @@
                 android:id="@+id/tv_detail_item_number"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="6"
+                android:text="@{detail_data.value}"
                 android:textAlignment="center"
                 android:textColor="#CCCCCC"
                 android:textSize="44sp" />
@@ -41,7 +41,7 @@
                 android:id="@+id/tv_detail_item_symbol"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="시"
+                android:text="@{detail_data.symbol}"
                 android:textAlignment="center"
                 android:textColor="#CCCCCC"
                 android:textSize="18sp" />
