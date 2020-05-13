@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">additional_weather_app</string>
+    <string name="app_name">Weatheroper</string>
     <string name="default_province">대전광역시 유성구</string>
     <string-array name="province_array">
         <item>유성구</item>
