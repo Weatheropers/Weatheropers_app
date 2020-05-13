@@ -8,18 +8,18 @@
 
 # Result
 
-![결과1](https://user-images.githubusercontent.com/56823614/81816124-da9a4400-9565-11ea-91a5-e98e01dd16a4.png)  
+<img src="https://user-images.githubusercontent.com/56823614/81816124-da9a4400-9565-11ea-91a5-e98e01dd16a4.png" width="180">  
 
 ## 각 기능 및 화면 설명
 1. 처음 들어갔을시 인터넷 연결 확인 후, 초기 값으로 대전광역시 유성구의 날씨 정보를 가져와 사용자에게 보여진다.
 
-![결과2](https://user-images.githubusercontent.com/56823614/81816117-d837ea00-9565-11ea-9381-badd77b65102.png)  
+<img src="https://user-images.githubusercontent.com/56823614/81816117-d837ea00-9565-11ea-9381-badd77b65102.png" width="180">  
 
 2. 드롭박스에서 5개의 지역구를 선택해 원하는 지역 구의 날씨 정보를 얻어서 화면에 있던 정보들을 실시간으로 바꾼다.
 
-![결과3](https://user-images.githubusercontent.com/56823614/81816127-db32da80-9565-11ea-829b-4924389cfa13.png)  
+<img src="https://user-images.githubusercontent.com/56823614/81816127-db32da80-9565-11ea-829b-4924389cfa13.png" width="180">  
 
-![결과4](https://user-images.githubusercontent.com/56823614/81816130-dc640780-9565-11ea-9d08-f4a624bc0593.png)  
+<img src="https://user-images.githubusercontent.com/56823614/81816130-dc640780-9565-11ea-9d08-f4a624bc0593.png" width="180">  
 
 3. 화면은 총 네가지로 나뉜다.
     - 가장 먼저 보이는 메인화면(Primary)
