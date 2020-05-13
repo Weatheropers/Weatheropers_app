@@ -1,5 +1,9 @@
 package com.silso.additional_weather_app.ui.activity
 
+import android.annotation.SuppressLint
+import android.content.Context
+import android.net.ConnectivityManager
+import android.net.NetworkInfo
 import android.os.Bundle
 import android.view.View
 import android.widget.AdapterView
@@ -12,22 +16,31 @@ import com.silso.additional_weather_app.ui.fragment.SchoolFragment
 import com.silso.additional_weather_app.ui.fragment.TimeZoneFragment
 import com.silso.additional_weather_app.viewmodel.MainViewModel
 import kotlinx.android.synthetic.main.activity_main.*
+import org.jetbrains.anko.alert
+import org.jetbrains.anko.noButton
+import org.jetbrains.anko.yesButton
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class MainActivity : AppCompatActivity() {
     val viewModel: MainViewModel by viewModel()
 
+    @SuppressLint("SourceLockedOrientationActivity")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        initialization()
+        initional()
     }
 
-    fun initialization() {
-        viewModel.getData("0")
-        setFragment()
-        setSpiner()
+    private fun initional() {
+        val bool = isConnected()
+        if(bool != null && bool) {
+            viewModel.getData("0")
+            setFragment()
+            setSpiner()
+        } else {
+            makeAlert()
+        }
     }
 
     fun setFragment() {
@@ -57,17 +70,35 @@ class MainActivity : AppCompatActivity() {
                     position: Int,
                     id: Long
                 ) {
-                    viewModel.getData(position.toString())
-                    tv_main_province_name.text = when (position) {
-                        0 -> "대전광역시 유성구"
-                        1 -> "대전광역시 서구"
-                        2 -> "대전광역시 중구"
-                        3 -> "대전광역시 대덕구"
-                        4 -> "대전광역시 동구"
-                        else -> "에러, 다시 접속해 주십시오"
+                    val bool = isConnected()
+                    if(bool != null && bool) {
+                        viewModel.getData(position.toString())
+                        tv_main_province_name.text = when (position) {
+                            0 -> "대전광역시 유성구"
+                            1 -> "대전광역시 서구"
+                            2 -> "대전광역시 중구"
+                            3 -> "대전광역시 대덕구"
+                            4 -> "대전광역시 동구"
+                            else -> "에러, 다시 접속해 주십시오"
+                        }
+                    } else {
+                        makeAlert()
                     }
                 }
             }
         }
+    }
+
+    fun isConnected(): Boolean? {
+        val cm: ConnectivityManager = this.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
+        val networkInfo: NetworkInfo? = cm.activeNetworkInfo ?: null
+        return networkInfo?.isConnectedOrConnecting
+    }
+
+    fun makeAlert(){
+        alert("네트워크 환경을 다시 한 번 확인해 주시길 바랍니다.", "인터넷 연결없음") {
+            yesButton { initional() }
+            noButton { this@MainActivity.finishAffinity() }
+        }.show()
     }
 }
