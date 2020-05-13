@@ -28,8 +28,7 @@
                 android:text="@{primary_data.value}"
                 android:textAlignment="center"
                 android:textColor="#CCCCCC"
-                android:textSize="30sp"
-                tools:text="dfdf" />
+                android:textSize="30sp" />
 
             <TextView
                 android:id="@+id/tv_detail_item_symbol"
@@ -38,8 +37,7 @@
                 android:text="@{primary_data.symbol}"
                 android:textAlignment="center"
                 android:textColor="#CCCCCC"
-                android:textSize="18sp"
-                tools:text="df" />
+                android:textSize="18sp" />
 
         </LinearLayout>
 
@@ -50,8 +48,7 @@
             android:text="@{primary_data.title}"
             android:textAlignment="center"
             android:textColor="#CCCCCC"
-            android:textSize="24sp"
-            tools:text="dfdfdfdf" />
+            android:textSize="24sp" />
 
     </LinearLayout>
 </layout>

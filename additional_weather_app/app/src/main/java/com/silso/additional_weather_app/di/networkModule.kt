@@ -19,7 +19,7 @@ val networkModule = module {
 fun provideRetrofit(okHttpClient: OkHttpClient): Retrofit {
     return Retrofit.Builder()
         .client(okHttpClient)
-        .baseUrl("http://weatherapi.pythonanywhere.com/")
+        .baseUrl("https://weatherapi.pythonanywhere.com/")
         .addConverterFactory(GsonConverterFactory.create())
         .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
         .build()

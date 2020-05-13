@@ -89,12 +89,12 @@ class WeatherRepository : KoinComponent {
 
     fun getDetailData() {
         detailLiveData.value = listOf(
-            SimpleData("예측시간", "시", data[0].hour.toString()),
+            SimpleData("측정시간", "시", data[0].hour.toString()),
             SimpleData("습도", "%", data[0].humi.toString()),
             SimpleData("예상 강수량", "mm", data[0].expect_rain_6h.toString()),
             SimpleData("풍속", "m/s", data[0].wind_speed.toString()),
-            SimpleData("미세먼지", "단계", data[0].fine_dust),
-            SimpleData("초미세먼지", "단계", data[0].fine_dust)
+            SimpleData("풍량", "CFM", data[0].wind_way.toString()),
+            SimpleData("미세먼지", "단계", data[0].fine_dust)
         )
     }
 

@@ -27,6 +27,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="12dp"
+            app:bind_image="@{time_data.resource}"
             app:srcCompat="@drawable/sunny" />
 
         <TextView

@@ -32,6 +32,7 @@
             android:layout_height="wrap_content"
             android:layout_toStartOf="@+id/tv_school_item_state"
             android:layout_toEndOf="@+id/tv_school_item_title"
+            app:bind_image="@{school_data.resource}"
             app:srcCompat="@drawable/sunny" />
 
         <TextView

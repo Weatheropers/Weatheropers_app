@@ -1,6 +1,9 @@
 package com.silso.additional_weather_app.data
 
+import android.widget.ImageView
+import androidx.databinding.BindingAdapter
 import com.silso.additional_weather_app.R
+import org.jetbrains.anko.imageResource
 
 object UtillObject {
     fun convertImage(state: Int): Int{
@@ -26,5 +29,12 @@ object UtillObject {
                 |잠시 지나가는 비니깐 걱정하진 마세요ㅎㅎㅎ""".trimMargin()
             else -> "제가 좋아하는 숫자는 404가 아닙니다."
         }
+    }
+}
+
+@BindingAdapter("bind_image")
+fun bindImage(view: ImageView, res: Int?) {
+    if (res != null) {
+        view.imageResource = res
     }
 }
